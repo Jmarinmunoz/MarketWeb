@@ -1,0 +1,702 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+:root {
+    --mw-dark-blue: #032145;
+    --mw-primary-blue: #032145;
+    --mw-orange: #FF7A00;
+    --mw-green: #16A34A;
+    --mw-red: #DC2626;
+    --mw-bg: #F3F6FA;
+}
+
+body {
+    background-color: var(--mw-bg);
+}
+
+.mw-sidebar {
+    background: var(--mw-dark-blue);
+    min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+    .mw-sidebar {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+    }
+}
+
+.mw-sidebar .nav-link {
+    color: #cfd9e7;
+    border-radius: 0.75rem;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.mw-sidebar .nav-link:hover,
+.mw-sidebar .nav-link.active {
+    color: #fff;
+    background-color: #60a5fa;
+}
+
+.mw-card {
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 43, 91, 0.08);
+}
+
+.mw-kpi-card .card-body {
+    min-height: 110px;
+}
+
+.mw-kpi-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #f2f6ff;
+    display: grid;
+    place-items: center;
+    font-size: 1.45rem;
+}
+
+.text-purple {
+    color: #6d4dcf;
+}
+
+.mw-login-page {
+    background: #f1f3f7;
+}
+
+.mw-login-hero {
+    background:
+        radial-gradient(circle at 25% 15%, rgba(3, 33, 69, 0.45), transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(255, 122, 0, 0.15), transparent 30%),
+        linear-gradient(140deg, #032145 0%, #032145 60%, #032145 100%);
+    color: #fff;
+}
+
+.mw-login-hero-content {
+    width: min(500px, 100%);
+    margin: auto;
+    padding: 2.35rem;
+}
+
+.mw-login-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+}
+
+.mw-login-hero-text {
+    max-width: 420px;
+    color: #d7e3f5;
+    font-size: 1rem;
+}
+
+.mw-login-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    color: #d7e3f5;
+}
+
+.mw-login-feature-grid i {
+    color: var(--mw-orange);
+}
+
+.mw-login-feature-item {
+    border-right: 1px solid rgba(215, 227, 245, 0.22);
+    padding-right: 0.85rem;
+}
+
+.mw-login-feature-item:last-child {
+    border-right: 0;
+}
+
+.mw-login-feature-title {
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.35rem;
+}
+
+.mw-login-feature-item small {
+    display: block;
+    line-height: 1.3;
+    font-size: 0.86rem;
+    color: #c8d6eb;
+}
+
+.mw-login-illustration {
+    max-width: 500px;
+}
+
+.mw-login-illustration img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.22));
+}
+
+.mw-login-form-wrapper {
+    background: #f7f8fb;
+}
+
+.mw-login-card {
+    max-width: 520px;
+    border-radius: 1rem;
+}
+
+.mw-login-icon {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: rgba(255, 122, 0, 0.12);
+    color: var(--mw-orange);
+    display: grid;
+    place-items: center;
+    font-size: 1.65rem;
+}
+
+@media (max-width: 991.98px) {
+    .mw-login-page {
+        background: #f7f8fb;
+    }
+
+    .mw-login-card {
+        max-width: 680px;
+    }
+}
+
+/* --- Gestión de productos (admin / lista) --- */
+.btn-mw-orange {
+    background-color: var(--mw-orange);
+    border-color: var(--mw-orange);
+    color: #fff;
+}
+
+.btn-mw-orange:hover {
+    background-color: #e56e00;
+    border-color: #e56e00;
+    color: #fff;
+}
+
+.btn-mw-save {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: #fff;
+}
+
+.btn-mw-save:hover {
+    background-color: #0b5ed7;
+    border-color: #0b5ed7;
+    color: #fff;
+}
+
+.mw-products-toolbar-card {
+    border-radius: 0.85rem;
+}
+
+.mw-products-toolbar-icon {
+    position: absolute;
+    left: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.85rem;
+    color: #94a3b8;
+    pointer-events: none;
+}
+
+.mw-products-search-input {
+    border-radius: 0.65rem;
+}
+
+.mw-products-table-card {
+    border-radius: 0.85rem;
+}
+
+.mw-products-table-wrap table thead th {
+    background: #eef2f7;
+    color: #475569;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: none;
+    border-bottom: 1px solid #e2e8f0;
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+}
+
+.mw-products-table-wrap table tbody td {
+    border-bottom: 1px solid #eef2f7;
+    font-size: 0.9375rem;
+}
+
+.mw-products-datatable tbody tr:hover {
+    background-color: #fafbfd;
+}
+
+.mw-badge-stock {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 0.8125rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+}
+
+.mw-badge-stock--active {
+    color: #15803d;
+    background: #dcfce7;
+}
+
+.mw-badge-stock--warning {
+    color: #c2410c;
+    background: #ffedd5;
+}
+
+.mw-badge-stock--danger {
+    color: #b91c1c;
+    background: #fee2e2;
+}
+
+.mw-badge-stock--inactive {
+    color: #64748b;
+    background: #f1f5f9;
+}
+
+.mw-product-drawer {
+    width: min(440px, 100vw);
+}
+
+.mw-drawer-tab {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0f172a;
+    padding-bottom: 0.35rem;
+    border-bottom: 3px solid var(--mw-orange);
+}
+
+.mw-drawer-input-icon {
+    position: absolute;
+    right: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+    color: #94a3b8;
+    pointer-events: none;
+}
+
+.mw-drawer-barcode-box {
+    min-height: 100px;
+}
+
+.mw-drawer-barcode-svg {
+    max-width: 100%;
+    height: auto;
+}
+
+.mw-products-actions-col {
+    min-width: 88px;
+}
+
+/* --- Ventas / POS --- */
+.mw-pos-card {
+    border-radius: 0.9rem;
+}
+
+.mw-pos-search-input {
+    border: 1.5px solid rgba(255, 122, 0, 0.7);
+    border-radius: 0.85rem;
+    height: 54px;
+    padding-left: 3rem;
+    padding-right: 2.75rem;
+    font-size: 1.05rem;
+}
+
+.mw-pos-search-input:focus {
+    border-color: var(--mw-orange);
+    box-shadow: 0 0 0 0.2rem rgba(255, 122, 0, 0.15);
+}
+
+.mw-pos-search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--mw-orange);
+    font-size: 1.45rem;
+}
+
+.mw-pos-keyboard-icon {
+    position: absolute;
+    right: 0.95rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #475569;
+}
+
+.mw-pos-secondary-search {
+    border-radius: 0.8rem;
+    height: 54px;
+    padding-left: 2.3rem;
+    background: #fff;
+}
+
+.mw-pos-secondary-search-icon {
+    position: absolute;
+    left: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+}
+
+.mw-pos-autocomplete {
+    top: calc(100% + 0.35rem);
+    left: 0;
+    z-index: 25;
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+.mw-pos-table thead th {
+    color: #475569;
+    font-weight: 600;
+    font-size: 0.86rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.mw-pos-table td {
+    border-bottom: 1px solid #edf2f7;
+    vertical-align: middle;
+}
+
+.mw-pos-qty-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.mw-pos-qty-wrap .btn {
+    width: 30px;
+    height: 30px;
+    line-height: 1;
+    border-radius: 0.45rem;
+    padding: 0;
+}
+
+.mw-pos-qty-value {
+    width: 42px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.mw-pos-total {
+    font-size: 2.2rem;
+    color: var(--mw-dark-blue);
+    line-height: 1;
+}
+
+.mw-pos-payment-option {
+    border: 1px solid #e2e8f0;
+    border-radius: 0.7rem;
+    padding: 0.65rem 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    color: #334155;
+    cursor: pointer;
+    min-height: 54px;
+    transition: 0.2s ease;
+}
+
+.mw-pos-payment-option i {
+    margin-right: 0.45rem;
+}
+
+.mw-pos-payment-check {
+    color: transparent;
+}
+
+.mw-pos-payment-input:checked + .mw-pos-payment-option {
+    border-color: var(--mw-orange);
+    background: #fff7ed;
+    color: #7c2d12;
+}
+
+.mw-pos-payment-input:checked + .mw-pos-payment-option .mw-pos-payment-check {
+    color: var(--mw-orange);
+}
+
+.mw-pos-money-input-wrap {
+    width: 140px;
+    position: relative;
+}
+
+.mw-pos-money-input-wrap > span {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+}
+
+.mw-pos-money-input-wrap input {
+    padding-left: 1.5rem;
+    text-align: right;
+}
+
+/* --- Inventario (admin) --- */
+.mw-inv-kpi-card {
+    border-radius: 0.85rem;
+}
+
+.mw-inv-kpi-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    font-size: 1.4rem;
+}
+
+.mw-inv-kpi-icon--blue {
+    background: #e0edff;
+    color: #2563eb;
+}
+
+.mw-inv-kpi-icon--yellow {
+    background: #fff4db;
+    color: #d97706;
+}
+
+.mw-inv-kpi-icon--red {
+    background: #ffe3e3;
+    color: #dc2626;
+}
+
+.mw-inv-kpi-icon--green {
+    background: #ddfbe9;
+    color: #16a34a;
+}
+
+.mw-inv-table-card {
+    border-radius: 0.9rem;
+}
+
+.mw-inv-search-icon {
+    position: absolute;
+    left: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+#mw-inventory-table thead th {
+    font-size: 0.84rem;
+    color: #475569;
+    font-weight: 600;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+#mw-inventory-table tbody td {
+    border-bottom: 1px solid #edf2f7;
+}
+
+.mw-inv-row-sin_stock {
+    background: #fff1f2;
+}
+
+.mw-inv-row-stock_bajo {
+    background: #fffbeb;
+}
+
+.mw-inv-row-stock_ok {
+    background: #f8fafc;
+}
+
+.mw-inv-badge {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.mw-inv-badge--danger {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.mw-inv-badge--warning {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.mw-inv-badge--gray {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+/* --- Movimientos de inventario (admin) --- */
+.mw-mov-card {
+    border-radius: 0.9rem;
+}
+
+.mw-mov-modal {
+    border-radius: 1rem;
+}
+
+#mwMovementModal .modal-dialog {
+    max-width: 760px;
+}
+
+#mwMovementModal .modal-title {
+    font-size: 1.9rem;
+}
+
+#mwMovementModal .form-label {
+    font-size: 1rem !important;
+    margin-bottom: 0.4rem;
+}
+
+#mwMovementModal .form-control,
+#mwMovementModal .form-select {
+    min-height: 46px;
+    font-size: 1rem;
+}
+
+#mwMovementModal .btn-primary {
+    min-height: 48px;
+    font-size: 1.15rem;
+}
+
+.mw-mov-row {
+    cursor: pointer;
+}
+
+.mw-mov-row:hover {
+    background: #f8fafc;
+}
+
+.mw-mov-detail-drawer {
+    width: min(440px, 100vw);
+}
+
+.mw-mov-detail-body {
+    background: #f8fafc;
+}
+
+.mw-mov-detail-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    padding: 1rem 1.1rem;
+    background: #fff;
+    border: 1px solid #e8eef5;
+    border-radius: 0.85rem;
+}
+
+.mw-mov-detail-feature--product {
+    align-items: center;
+}
+
+.mw-mov-detail-mini {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    padding: 1rem 1.1rem;
+    background: #fff;
+    border: 1px solid #e8eef5;
+    border-radius: 0.85rem;
+}
+
+.mw-mov-detail-round {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+.mw-mov-detail-feature--product .mw-mov-detail-round {
+    width: 2.85rem;
+    height: 2.85rem;
+    font-size: 1.05rem;
+}
+
+.mw-mov-detail-round--danger {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.mw-mov-detail-round--primary {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.mw-mov-detail-round--success {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.mw-mov-detail-round--purple {
+    background: #ede9fe;
+    color: #7c3aed;
+}
+
+.mw-mov-detail-round--warning {
+    background: #ffedd5;
+    color: #ea580c;
+}
+
+#mw-mov-table thead th {
+    font-size: 0.84rem;
+    color: #475569;
+    font-weight: 600;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+#mw-mov-table tbody td {
+    border-bottom: 1px solid #edf2f7;
+}
+
+.mw-mov-badge {
+    display: inline-block;
+    padding: 0.28rem 0.62rem;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+
+.mw-mov-badge--entrada {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.mw-mov-badge--salida {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.mw-mov-badge--ajuste {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.mw-mov-badge--venta {
+    background: #ede9fe;
+    color: #6d28d9;
+}
